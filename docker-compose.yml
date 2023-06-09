@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  front:
+    image: node:18.16.0-alpine # 軽量化のためalpineを使用
+    container_name: food-app
+    environment:
+      - NODE_ENV=development
+      - WATCHPACK_POLLING=true # ファイルを変更したらブラウザに即反映されるようにする
+    volumes:
+      - ./front/:/usr/app
+    ports:
+      - 3000:3000
+    working_dir: /usr/app
+    command: ash -c "npm start && npm run build"
+    tty: true
