@@ -1,27 +1,25 @@
-import { Box, Flex, Heading, Text } from '@chakra-ui/react';
+import { Box, Button, ButtonGroup, Flex, Heading, Spacer} from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
 	return (
 		<>
-			<Flex
-				as="nav"
-				bgColor="orange.300"
-				h="60px"
-				w="100%"
-				position="fixed"
-				px="24px"
-				justify="space-between"
-				align="center"
-			>
-				<Heading as="h1" fontSize="28px">
-					<Link to="/">CoreTech グルメアプリ</Link>
-				</Heading>
-				<Text>
-					<Link to="likes">お気に入り</Link>
-				</Text>
+			<Flex minWidth='max-content' alignItems='center' gap='2' m="3">
+				<Box p='2'>
+					<Heading size='lg'>
+						<Link to="/">CoreTech グルメアプリ</Link>
+					</Heading>
+				</Box>
+				<Spacer />
+				<ButtonGroup gap='3'>
+					<Link to="likes">
+						<Button color="white" bg='cor.100'>お気に入り</Button>
+					</Link>
+					<Link to="/">
+						<Button color="white" bg='cor.100'>TOPに戻る</Button>
+					</Link>
+				</ButtonGroup>
 			</Flex>
-			<Box h="60px" />
 		</>
 	);
 };
