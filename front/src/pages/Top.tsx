@@ -4,16 +4,21 @@ import {
 	Checkbox,
 	CheckboxGroup,
 	Heading,
-	ListItem,
+	SimpleGrid,
 	Stack,
-	UnorderedList,
+	Wrap,
+	WrapItem,
 } from '@chakra-ui/react';
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Shop from '../components/Shop';
+import useGetShopData from '../hooks/useGetShopData';
 
 const Top = () => {
-	const navigate = useNavigate();
+	const { getShopData, shopData } = useGetShopData();
+	useEffect(() => getShopData(0), []);
 
+	const navigate = useNavigate();
 	const onClickSearchButton = () => {
 		navigate('shops');
 	};
@@ -34,18 +39,27 @@ const Top = () => {
 					</CheckboxGroup>
 					<Button onClick={onClickSearchButton}>検索</Button>
 				</Box>
-				<Heading as="h3">オススメの店舗！</Heading>
-				<UnorderedList>
-					<ListItem>
-						<Link to="shops/1">店舗1</Link>
-					</ListItem>
-					<ListItem>
-						<Link to="shops/2">店舗2</Link>
-					</ListItem>
-					<ListItem>
-						<Link to="shops/3">店舗3</Link>
-					</ListItem>
-				</UnorderedList>
+				<Heading as="h4">オススメの店舗！</Heading>
+				<SimpleGrid columns={2} spacing={10} >
+					<Box>
+						<Shop shopData={shopData}/>
+					</Box>
+					<Box>
+						<Shop shopData={shopData}/>
+					</Box>
+					<Box>
+						<Shop shopData={shopData}/>
+					</Box>
+					<Box>
+						<Shop shopData={shopData}/>
+					</Box>
+					<Box>
+						<Shop shopData={shopData}/>
+					</Box>
+					<Box>
+						<Shop shopData={shopData}/>
+					</Box>
+				</SimpleGrid>
 			</Stack>
 		</Box>
 	);
