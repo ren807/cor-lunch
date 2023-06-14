@@ -13,10 +13,10 @@ const Header = () => {
 				<Spacer />
 				<ButtonGroup gap='3'>
 					<Link to="likes">
-						<Button color="white" bg='cor.100'>お気に入り</Button>
+						<Button color="white" bg='cor.100' borderRadius='24px' _hover={{ bg: 'rgba(248, 157, 5, 0.8)' }}>お気に入り</Button>
 					</Link>
 					<Link to="/">
-						<Button color="white" bg='cor.100'>TOPに戻る</Button>
+						<Button color="white" bg='cor.100' borderRadius='24px' _hover={{ bg: 'rgba(248, 157, 5, 0.8)' }}>TOPに戻る</Button>
 					</Link>
 				</ButtonGroup>
 			</Flex>
