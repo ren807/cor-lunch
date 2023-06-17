@@ -17,8 +17,8 @@ const useGetShopsData = () => {
 				setShops(fetchedData);
 				console.log(res.data.results.shop);
 			})
-			.catch((err: any) => {
-				console.error(err);
+			.catch(() => {
+				alert("データが取れませんでした");
 			});
 		}, []);
 	return { getShopsData , shops};
