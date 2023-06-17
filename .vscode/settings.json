@@ -1,0 +1,15 @@
+{
+	"indentRainbow.colors": [
+        "rgba(226,239,217,0.5)",
+        "rgba(156,194,229,0.5)",
+        "rgba(142,170,219,0.5)",
+        "rgba(189,214,238,0.5)",
+        "rgba(180,198,231,0.5)",
+        "rgba(222,234,246,0.5)",
+        "rgba(255,0,0,0.5)",
+    ],
+    "indentRainbow.excludedLanguages": [],
+    "indentRainbow.includedLanguages": [
+        "plaintext"
+    ],
+}
