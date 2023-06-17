@@ -2,11 +2,11 @@ import {
 	Box,
 	Center,
 	Heading,
-	Image,
 	SimpleGrid,
 	Stack,
 } from '@chakra-ui/react';
 import { useEffect } from 'react';
+
 import Shop from '../components/Shop';
 import useGetShopsData from '../hooks/useGetShopsData';
 
