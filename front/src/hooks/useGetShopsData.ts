@@ -1,27 +1,15 @@
-import axios from 'axios';
 import { useCallback, useState } from 'react';
+import { ShopDataType, Shops } from '../db/Shops';
 
 const useGetShopsData = () => {
-	// API情報を定義
-	const API_KEY = 'f58be42c8cff0bc1';
-	const URL = 'http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=' + API_KEY + '&format=json' + '&large_area=Z011';
+	const [shopsData, setShopsData] = useState<Array<ShopDataType> | null>(null);
 
-	const [shops, setShops] = useState([]);
+	const getShopsData = useCallback(() => {
+		const shopsData = Shops();
+		setShopsData(shopsData);
+	}, []);
 
-	const getShopsData = useCallback(
-		() => {
-			axios
-			.get(URL)
-			.then((res: any) => {
-				const fetchedData = res.data.results.shop;
-				setShops(fetchedData);
-				console.log(res.data.results.shop);
-			})
-			.catch(() => {
-				alert("データが取れませんでした");
-			});
-		}, []);
-	return { getShopsData , shops};
+	return { getShopsData , shopsData};
 };
 
 export default useGetShopsData;

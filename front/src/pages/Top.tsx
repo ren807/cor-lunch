@@ -6,12 +6,13 @@ import {
 	Stack,
 } from '@chakra-ui/react';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import Shop from '../components/Shop';
 import useGetShopsData from '../hooks/useGetShopsData';
 
 const Top = () => {
-	const { getShopsData, shops } = useGetShopsData();
+	const { getShopsData, shopsData } = useGetShopsData();
 	useEffect(() => getShopsData(), []);
 
 	return (
@@ -22,9 +23,11 @@ const Top = () => {
 					<Box my={4}>
 						<Heading as="h3" size="lg" m={2}>カテゴリ別に検索</Heading>
 						<SimpleGrid columns={[2, null, 5]} spacing='40px'>
-							<Center bg='cor.200' height='80px'>
-								中華
-							</Center>
+							<Link to="list/ChineseFood">
+								<Center bg='cor.200' height='80px'>
+										中華
+								</Center>
+							</Link>
 							<Center bg='cor.200' height='80px'>
 								麺類
 							</Center>
@@ -43,9 +46,9 @@ const Top = () => {
 					<Box m={4}>
 						<Heading as="h3" size="lg" m={2}>本日のオススメの店舗</Heading>
 						<SimpleGrid columns={2} spacing={10} >
-							{shops.map((shop, index) => (
+							{shopsData?.map((shop, index) => (
 								<Box key={index}>
-									<Shop shop={shop}/>
+									<Shop {...shop}/>
 								</Box>
 							))}
 						</SimpleGrid>

@@ -11,7 +11,7 @@ const ShopDetails = () => {
 			<p>{shopData?.name}</p>
 			<p>{shopData?.address}</p>
 			<ul>
-				{shopData?.tags.map((tag: string) => {
+				{shopData?.sub_genre.map((tag: string) => {
 					return <li>{tag}</li>;
 				})}
 			</ul>
