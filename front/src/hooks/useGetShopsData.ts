@@ -6,7 +6,7 @@ const useGetShopsData = () => {
 
 	const getShopsData = useCallback(() => {
 		const shopsData = Shops();
-		setShopsData(shopsData);
+		setShopsData(shopsData.sort(() => Math.random() - 0.5).slice(0,4));
 	}, []);
 
 	return { getShopsData , shopsData};

@@ -16,8 +16,6 @@ const Shop = (props: ShopDataType) => {
 					objectFit="cover"
 					width={{ base: '100%', sm: '200px' }}
 					height={{ base: '200px', sm: '200px' }}
-					// 
-					
 				/>
 				<Stack>
 					<CardBody>
