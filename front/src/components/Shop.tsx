@@ -1,43 +1,52 @@
 import { Box, Card, CardBody, Flex, Heading, Icon, Image, Stack, Text } from '@chakra-ui/react';
-import { AiOutlineHeart } from 'react-icons/ai';
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { ShopDataType } from '../db/Shops';
+import useLikes from '../hooks/useLikes';
 
 const Shop = (props: ShopDataType) => {
 	const { path, name, address, genre, sub_genre} = props;
+
+	// いいね機能
+	const { like, handleClickSwitchFlag } = useLikes(props);
+
 	return (
-		<Link to={path}>
+		<>
 			<Card 
-				direction={{ base: 'column', sm: 'row' }} 
+				direction={{ base: 'column', sm: 'row' }}
 				overflow="hidden" 
 				variant="outline"
 			>
-				<Image
-					objectFit="cover"
-					width={{ base: '100%', sm: '200px' }}
-					height={{ base: '200px', sm: '200px' }}
-				/>
+				<Link to={path}>
+					<Image
+						objectFit="cover"
+						width={{ base: '100%', sm: '200px' }}
+						height={{ base: '200px', sm: '200px' }}
+					/>
+				</Link>
 				<Stack>
 					<CardBody>
 						<Flex minWidth='max-content' alignItems='center' gap='2' >
 							<Box p='2'>
-								<Heading size="md">{name}</Heading>
+								<Link to={path}>
+									<Heading size="md">{name}</Heading>
+								</Link>
 							</Box>
-							<Link to="likes">
-								<Icon w={6} h={6} color="red.500" as={AiOutlineHeart} />
-							</Link>
+							<Icon w={6} h={6} cursor="pointer" color={like ? "red.400" : ""} as={like ? AiFillHeart : AiOutlineHeart} onClick={handleClickSwitchFlag}/>
 						</Flex>
-						<Text py="2">{address}</Text>
-						<Text py="2">{genre}</Text>
-						<Flex wrap="wrap" py="2">
-							{sub_genre.map((sub_g: string, index: number) => (
-								<Text px="2" key={index}>{sub_g} </Text>
-							))}
-						</Flex>
+						<Link to={path}>
+							<Text py="2">{address}</Text>
+							<Text py="2">{genre}</Text>
+							<Flex wrap="wrap" py="2">
+								{sub_genre.map((sub_g: string, index: number) => (
+									<Text px="2" key={index}>{sub_g} </Text>
+								))};
+							</Flex>
+						</Link>
 					</CardBody>
 				</Stack>
 			</Card>
-		</Link>
+		</>
 	);
 };
 

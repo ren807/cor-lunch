@@ -8,7 +8,7 @@ type State = {
 	genre: string;
 };
 
-const ShopGenre = (props: any) => {
+const ShopGenre = () => {
 	// ジャンルの値を取得
 	const location = useLocation();
 	const { genre } = location.state as State;
@@ -16,6 +16,7 @@ const ShopGenre = (props: any) => {
 	// ジャンル検索
 	const { getShopsData, shopsData } = useGetShopsGenre(genre);
 	useEffect(() => getShopsData(), []);
+
 	return (
 		<>
 			{/* ジャンル検索一覧 */}
