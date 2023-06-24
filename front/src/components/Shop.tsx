@@ -40,7 +40,7 @@ const Shop = (props: ShopDataType) => {
 							<Flex wrap="wrap" py="2">
 								{sub_genre.map((sub_g: string, index: number) => (
 									<Text px="2" key={index}>{sub_g} </Text>
-								))};
+								))}
 							</Flex>
 						</Link>
 					</CardBody>
