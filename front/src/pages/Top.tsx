@@ -16,8 +16,7 @@ const Top = () => {
 
 	return (
 		<>
-			<Box p="20px">
-				<hr />
+			<Box p={10}>
 				<Stack>
 					{/* カテゴリ一覧 */}
 					<Box my={4}>
@@ -26,7 +25,7 @@ const Top = () => {
 					{/* おすすめ一覧 */}
 					<Box m={4}>
 						<Heading as="h3" size="lg" m={2}>本日のオススメの店舗</Heading>
-						<SimpleGrid columns={2} spacing={10} >
+						<SimpleGrid columns={2} spacing={10} mt={4}>
 							{shopsData?.map((shop, index) => (
 								<Box key={index}>
 									<Shop {...shop}/>

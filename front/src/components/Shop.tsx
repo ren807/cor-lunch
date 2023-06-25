@@ -5,7 +5,7 @@ import { ShopDataType } from '../db/Shops';
 import useLikes from '../hooks/useLikes';
 
 const Shop = (props: ShopDataType) => {
-	const { path, name, address, genre, sub_genre} = props;
+	const { path, name, address, genre, sub_genre, photo} = props;
 
 	// いいね機能
 	const { like, handleClickSwitchFlag } = useLikes(props);
@@ -22,6 +22,8 @@ const Shop = (props: ShopDataType) => {
 						objectFit="cover"
 						width={{ base: '100%', sm: '200px' }}
 						height={{ base: '200px', sm: '200px' }}
+						src={photo}
+						alt="画像が取得できませんでした"
 					/>
 				</Link>
 				<Stack>

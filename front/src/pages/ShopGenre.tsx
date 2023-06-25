@@ -19,16 +19,18 @@ const ShopGenre = () => {
 
 	return (
 		<>
-			{/* ジャンル検索一覧 */}
-			<Box m={4}>
-				<Heading as="h3" size="lg" m={2}>青葉台タワー周辺の{genre}</Heading>
-				<SimpleGrid columns={2} spacing={10} >
-					{shopsData?.map((shop, index) => (
-						<Box key={index}>
-							<Shop {...shop}/>
-						</Box>
-					))}
-				</SimpleGrid>
+			<Box p={10} >
+				{/* ジャンル検索一覧 */}
+				<Box m={4}>
+					<Heading as="h3" size="lg" m={2}>青葉台タワー周辺の{genre}</Heading>
+					<SimpleGrid columns={2} spacing={10} mt={4}>
+						{shopsData?.map((shop, index) => (
+							<Box key={index}>
+								<Shop {...shop}/>
+							</Box>
+						))}
+					</SimpleGrid>
+				</Box>
 			</Box>
 		</>
 	);
