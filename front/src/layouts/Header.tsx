@@ -3,13 +3,12 @@ import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
 
-	// 遷移先のURLを取得する
 	const location = useLocation();
 
 	return (
 		<>
-			<Flex minWidth='max-content' alignItems='center' gap='2' m="3">
-				<Box p='2'>
+			<Flex minWidth='max-content' alignItems='center' gap='2' m="3" mx='10'>
+				<Box p='2' >
 					<Heading size='lg'>
 						<Link to="/">CoreTech グルメアプリ</Link>
 					</Heading>
@@ -21,7 +20,7 @@ const Header = () => {
 							<Button color="white" bg='cor.100' borderRadius='24px' _hover={{ bg: 'rgba(248, 157, 5, 0.8)' }}>お気に入り</Button>
 						</Link>
 					)}
-					{location.pathname !== '/' && (
+					{location.pathname !== '/' &&(
 						<Link to="/">
 							<Button color="white" bg='cor.100' borderRadius='24px' _hover={{ bg: 'rgba(248, 157, 5, 0.8)' }}>TOPに戻る</Button>
 						</Link>

@@ -10,7 +10,7 @@ const useGetShopsGenre = (genre: string) => {
 		// フィルタリング
 		const filteredShopsData = shopsData.filter((shop) => shop.genre === genre);
 		setShopsData(filteredShopsData);
-	}, []);
+	}, [genre]);
 	
 	return { getShopsData , shopsData};
 };
