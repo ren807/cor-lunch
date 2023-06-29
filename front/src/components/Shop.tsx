@@ -1,6 +1,7 @@
 import { Box, Card, CardBody, Flex, Heading, Icon, Image, Stack, Text } from '@chakra-ui/react';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+
 import { ShopDataType } from '../db/Shops';
 import useLikes from '../hooks/useLikes';
 

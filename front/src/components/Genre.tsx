@@ -3,7 +3,11 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import useGetGenre from "../hooks/useGetGenre";
 
-const Genre = () => {
+type Props = {
+	currentGenre: string;
+};
+
+const Genre = (props: Props) => {
 	const { getGenresData, genresData } = useGetGenre();
 	useEffect(() => getGenresData(), []);
 
@@ -11,7 +15,7 @@ const Genre = () => {
 		<>
 			<Heading as="h3" size="lg" m={2}>カテゴリ別に検索</Heading>
 			<SimpleGrid columns={[2, null, 4]} spacing='40px' mt={4}>
-				{genresData?.map((genre, index) => (
+				{genresData?.filter(genre => genre.name !== props.currentGenre).map((genre, index) => (
 					<Link key={index} to={genre.path} state={{ genre: genre.name }}>
 						<Box
 							position='relative'

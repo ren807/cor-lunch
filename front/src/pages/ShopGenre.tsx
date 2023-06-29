@@ -24,7 +24,7 @@ const ShopGenre = () => {
 				<Stack>
 					{/* カテゴリ一覧 */}
 					<Box my={4}>
-						<Genre />
+						<Genre currentGenre={genre} />
 					</Box>
 					{/* ジャンル検索一覧 */}
 					<Box m={4}>

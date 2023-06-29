@@ -8,16 +8,14 @@ const useGetGenre = () => {
 
 	const getGenresData = useCallback(() => {
 		const genres = Genres();
+		setGenresData(genres);
 	
 		// TOPページの場合
 		if (location.pathname === '/') {
 			const topShopsData = genres.filter((genre) => genre.path !== '/category/other');
 			setGenresData(topShopsData);
 		}
-		if (location.pathname !== '/') {
-			const filteredShopsData = genres.filter((genre) => genre.path !== location.pathname);
-			setGenresData(filteredShopsData);
-		}
+		
 	}, []);
 	
 	return { getGenresData , genresData};

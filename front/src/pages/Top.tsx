@@ -5,14 +5,14 @@ import {
 	Stack,
 } from '@chakra-ui/react';
 import { useEffect } from 'react';
-import Genre from '../components/Genre';
 
+import Genre from '../components/Genre';
 import Shop from '../components/Shop';
 import useGetShopsData from '../hooks/useGetShopsData';
 
 const Top = () => {
 	const { getShopsData, shopsData } = useGetShopsData();
-	useEffect(() => getShopsData(), []);
+	useEffect(() => getShopsData(), [getShopsData]);
 
 	return (
 		<>
@@ -20,7 +20,7 @@ const Top = () => {
 				<Stack>
 					{/* カテゴリ一覧 */}
 					<Box my={4}>
-						<Genre />
+						<Genre currentGenre="" />
 					</Box>
 					{/* おすすめ一覧 */}
 					<Box m={4}>
