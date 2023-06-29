@@ -16,16 +16,16 @@ const Top = () => {
 
 	return (
 		<>
-			<Box p={10}>
+			<Box px={7} py={5}>
 				<Stack>
 					{/* カテゴリ一覧 */}
 					<Box my={4}>
 						<Genre currentGenre="" />
 					</Box>
 					{/* おすすめ一覧 */}
-					<Box m={4}>
+					<Box>
 						<Heading as="h3" size="lg" m={2}>本日のオススメの店舗</Heading>
-						<SimpleGrid columns={2} spacing={10} mt={4}>
+						<SimpleGrid columns={[1,null,2]} spacing={10} mt={4}>
 							{shopsData?.map((shop, index) => (
 								<Box key={index}>
 									<Shop {...shop}/>

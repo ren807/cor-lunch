@@ -27,7 +27,7 @@ export const Shops = (): Array<ShopDataType> => {
 		},
 		{
 			path: "/shop/2",
-			name: "中華そば 満鶏軒 南平台店",
+			name: "中華そば 満鶏軒",
 			address: "東京都渋谷区南平台町15-11 南平台野坂ビル 1F",
 			genre: "麺類",
 			sub_genre: ["油そば", "まぜそば", "つけ麺"],
@@ -39,7 +39,7 @@ export const Shops = (): Array<ShopDataType> => {
 		},
 		{
 			path: "/shop/3",
-			name: "トマトマン（THE TOMATOMAN）",
+			name: "トマトマン",
 			address: "東京都目黒区青葉台3-1-18",
 			genre: "麺類",
 			sub_genre: ["つけ麺", "汁なし坦々麺"],
@@ -51,7 +51,7 @@ export const Shops = (): Array<ShopDataType> => {
 		},
 		{
 			path: "/shop/4",
-			name: "らーめん たつみ屋 池尻店 ",
+			name: "らーめん たつみ屋",
 			address: "東京都世田谷区池尻3丁目4-1",
 			genre: "麺類",
 			sub_genre: ["ラーメン","つけ麺","餃子"],
@@ -63,7 +63,7 @@ export const Shops = (): Array<ShopDataType> => {
 		},
 		{
 			path: "/shop/5",
-			name: "Oti ",
+			name: "Oti",
 			address: "東京都目黒区青葉台3-10-11 青葉台フラッツ　2F",
 			genre: "麺類",
 			sub_genre: ["イタリアン", "ダイニングバー"],
@@ -111,7 +111,7 @@ export const Shops = (): Array<ShopDataType> => {
 		},
 		{
 			path: "/shop/9",
-			name: "万豚記 池尻大橋店",
+			name: "万豚記",
 			address: "東京都目黒区東山3-13-3",
 			genre: "中華",
 			sub_genre: ["ラーメン", "餃子", "中華料理"],
@@ -123,7 +123,7 @@ export const Shops = (): Array<ShopDataType> => {
 		},
 		{
 			path: "/shop/10",
-			name: "シーメンハン 池尻大橋店 （C-MEN-HAN）",
+			name: "シーメンハン",
 			address: "東京都目黒区大橋2-24-4 ホテルサーブ渋谷 1F",
 			genre: "中華",
 			sub_genre: ["オムライス","中華料理", "小籠包"],
@@ -135,7 +135,7 @@ export const Shops = (): Array<ShopDataType> => {
 		},
 		{
 			path: "/shop/11",
-			name: "田燕 まるかく三 池尻大橋店",
+			name: "田燕 まるかく三",
 			address: "東京都目黒区大橋2-22-8 いちご池尻ビル 1F",
 			genre: "中華",
 			sub_genre: ["中華料理", "居酒屋", "餃子"],

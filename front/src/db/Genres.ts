@@ -29,7 +29,7 @@ export const Genres = ():Array<GenreDataType> => {
 		{
 			name: "その他",
 			path: "/category/other",
-			photo: "",
+			photo: "https://core-app-s3.s3.ap-northeast-1.amazonaws.com/bbq.jpeg",
 		},
 	];
 };

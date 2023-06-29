@@ -20,7 +20,7 @@ const ShopGenre = () => {
 
 	return (
 		<>
-			<Box p={10} >
+			<Box px={7} py={5}>
 				<Stack>
 					{/* カテゴリ一覧 */}
 					<Box my={4}>
@@ -28,8 +28,8 @@ const ShopGenre = () => {
 					</Box>
 					{/* ジャンル検索一覧 */}
 					<Box m={4}>
-						<Heading as="h3" size="lg" m={2}>青葉台タワー周辺の{genre}</Heading>
-						<SimpleGrid columns={2} spacing={10} mt={4}>
+						<Heading as="h3" size="lg" m={2}>青葉台周辺の{genre}</Heading>
+						<SimpleGrid columns={[1,null,2]} spacing={10} mt={4}>
 							{shopsData?.map((shop, index) => (
 								<Box key={index}>
 									<Shop {...shop}/>

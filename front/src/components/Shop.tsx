@@ -32,7 +32,7 @@ const Shop = (props: ShopDataType) => {
 						<Flex minWidth='max-content' alignItems='center' gap='2' >
 							<Box p='2'>
 								<Link to={path}>
-									<Heading size="md">{name}</Heading>
+									<Heading size="md" isTruncated>{name}</Heading>
 								</Link>
 							</Box>
 							<Icon w={6} h={6} cursor="pointer" color={like ? "red.400" : ""} as={like ? AiFillHeart : AiOutlineHeart} onClick={handleClickSwitchFlag}/>

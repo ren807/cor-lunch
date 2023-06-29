@@ -21,12 +21,12 @@ const Like = () => {
 
 	return (
 		<>
-			<Box p={10}>
+			<Box px={7} py={5}>
 				<Stack>
 					{/* お気に入り一覧 */}
 					<Box m={4}>
 						<Heading as="h3" size="lg" m={2}>お気に入り店舗</Heading>
-						<SimpleGrid columns={2} spacing={10} mt={4}>
+						<SimpleGrid columns={[1,null,2]} spacing={10} mt={4}>
 							{shopsDate?.map((shop, index) => (
 								<Box key={index}>
 									<Shop {...shop}/>
