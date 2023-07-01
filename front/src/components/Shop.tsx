@@ -22,7 +22,7 @@ const Shop = (props: ShopDataType) => {
 					<Box >
 						<Link to={path}>
 							<Image
-								boxSize="320px"
+								boxSize="340px"
 								src={photo}
 								objectFit="cover"
 								alt="画像が取得できませんでした"
@@ -41,8 +41,8 @@ const Shop = (props: ShopDataType) => {
 								<Icon w={6} h={6} cursor="pointer" color={like ? "red.400" : ""} as={like ? AiFillHeart : AiOutlineHeart} onClick={handleClickSwitchFlag}/>
 							</Flex>
 							<Link to={path}>
-								<Text py="2">会社から徒歩：{time_from_company}</Text>
-								<Text py="2">ジャンル：{genre}</Text>
+								<Text py="2">🚶‍♂ 会社から徒歩：{time_from_company}</Text>
+								<Text py="2">🍴 ジャンル：<Text as="span" fontWeight="bold">{genre}</Text></Text>
 							</Link>
 						</CardBody>
 					</Stack>

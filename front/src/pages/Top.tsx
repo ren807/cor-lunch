@@ -1,10 +1,8 @@
 import {
 	Box,
-	Grid,
 	Heading,
 	SimpleGrid,
 	Stack,
-	Wrap,
 	WrapItem,
 } from '@chakra-ui/react';
 import { useEffect } from 'react';
@@ -27,10 +25,10 @@ const Top = () => {
 					</Box>
 					{/* おすすめ一覧 */}
 					<Box mb={4} width="100%">
-						<Heading as="h3" size="lg" my={2} textAlign={{ base: "center", md: "left" }}>
+						<Heading as="h3" size="lg" mt={2} mb={5} textAlign={{ base: "center", md: "left" }}>
 							本日のオススメの店舗 🎉
 						</Heading>
-						<Wrap p={4} display="flex" justifyContent="center" spacing="80px" flexDirection="row" alignItems="flex-start">
+						<SimpleGrid columns={{ base: 1, md: 4 }} spacing="30px" >
 							{shopsData?.map((shop, index) => (
 								<WrapItem key={index} m="auto">
 									<Box w="320px" minHeight="260px" borderRadius="10px" shadow="md" >
@@ -38,7 +36,7 @@ const Top = () => {
 									</Box>
 								</WrapItem>
 							))}
-						</Wrap>
+						</SimpleGrid>
 					</Box>
 				</Stack>
 			</Box>
