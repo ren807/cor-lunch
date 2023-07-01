@@ -149,7 +149,7 @@ export const Shops = (): Array<ShopDataType> => {
 			path: "/shop/12",
 			name: "ジャラナ",
 			address: "東京都目黒区青葉台2-1-1 ヴェルエ青葉台 2F",
-			genre: "カレー",
+			genre: "その他",
 			sub_genre: ["インドカレー", "居酒屋", "ダイニングバー"],
 			photo: "https://core-app-s3.s3.ap-northeast-1.amazonaws.com/%E3%82%B7%E3%82%99%E3%83%A3%E3%83%A9%E3%83%8A.jpeg",
 			Recommended_number_of_people: "1~4人",

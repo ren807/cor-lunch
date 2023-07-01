@@ -15,7 +15,7 @@ const Genre = (props: Props) => {
 		<>
 			<Heading as="h3" size="lg" m={2}>カテゴリ別に検索</Heading>
 			<SimpleGrid columns={[1, 2, 4]} spacing='40px' mt={4}>
-				{genresData?.filter(genre => genre.name !== props.currentGenre).map((genre, index) => (
+				{genresData?.map((genre, index) => (
 					<Link key={index} to={genre.path} state={{ genre: genre.name }}>
 						<Box
 							position='relative'

@@ -22,11 +22,6 @@ export const Genres = ():Array<GenreDataType> => {
 			photo: "https://core-app-s3.s3.ap-northeast-1.amazonaws.com/%E4%B8%BC%E3%82%82%E3%81%AE.jpeg",
 		},
 		{
-			name: "カレー",
-			path: "/category/curry",
-			photo: "https://core-app-s3.s3.ap-northeast-1.amazonaws.com/%E3%82%AB%E3%83%AC%E3%83%BC.jpeg",
-		},
-		{
 			name: "その他",
 			path: "/category/other",
 			photo: "https://core-app-s3.s3.ap-northeast-1.amazonaws.com/bbq.jpeg",
