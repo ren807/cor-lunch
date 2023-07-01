@@ -7,8 +7,8 @@ const useGetShopsData = () => {
 	const getShopsData = useCallback(() => {
 		const shopsData = Shops();
 
-		// おすすめはランダム４件表示
-		setShopsData(shopsData.sort(() => Math.random() - 0.5).slice(0,4));
+		// おすすめはランダム5件表示
+		setShopsData(shopsData.sort(() => Math.random() - 0.5).slice(0,5));
 	}, []);
 
 	return { getShopsData , shopsData};

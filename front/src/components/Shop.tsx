@@ -6,7 +6,7 @@ import { ShopDataType } from '../db/Shops';
 import useLikes from '../hooks/useLikes';
 
 const Shop = (props: ShopDataType) => {
-	const { path, name, address, genre, sub_genre, photo} = props;
+	const { path, name, genre, photo} = props;
 
 	// いいね機能
 	const { like, handleClickSwitchFlag } = useLikes(props);
@@ -18,35 +18,40 @@ const Shop = (props: ShopDataType) => {
 				overflow="hidden" 
 				variant="outline"
 			>
-				<Link to={path}>
-					<Image
-						objectFit="cover"
-						width={{ base: '100%', sm: '200px' }}
-						height={{ base: '200px', sm: '200px' }}
-						src={photo}
-						alt="画像が取得できませんでした"
-					/>
-				</Link>
 				<Stack>
-					<CardBody>
-						<Flex minWidth='max-content' alignItems='center' gap='4' >
-							<Box p='2'>
-								<Link to={path}>
-									<Heading size="md" isTruncated>{name}</Heading>
-								</Link>
-							</Box>
-							<Icon w={6} h={6} cursor="pointer" color={like ? "red.400" : ""} as={like ? AiFillHeart : AiOutlineHeart} onClick={handleClickSwitchFlag}/>
-						</Flex>
+					<Box >
 						<Link to={path}>
-							{/* <Text py="2">{address}</Text> */}
-							<Text py="2">{genre}</Text>
-							{/* <Flex wrap="wrap" py="2">
-								{sub_genre.map((sub_g: string, index: number) => (
-									<Text px="2" key={index}>{sub_g} </Text>
-								))}
-							</Flex> */}
+							<Image
+								// width="100%"
+								boxSize="300px"
+								src={photo}
+								objectFit="cover"
+								alt="画像が取得できませんでした"
+								m="auto"
+							/>
 						</Link>
-					</CardBody>
+					</Box>
+					<Stack>
+						<CardBody>
+							<Flex minWidth='max-content' alignItems='center' gap='2' >
+								<Box p='2'>
+									<Link to={path}>
+										<Heading size="md" isTruncated>{name}</Heading>
+									</Link>
+								</Box>
+								<Icon w={6} h={6} cursor="pointer" color={like ? "red.400" : ""} as={like ? AiFillHeart : AiOutlineHeart} onClick={handleClickSwitchFlag}/>
+							</Flex>
+							<Link to={path}>
+								{/* <Text py="2">{address}</Text> */}
+								<Text py="2">{genre}</Text>
+								{/* <Flex wrap="wrap" py="2">
+									{sub_genre.map((sub_g: string, index: number) => (
+										<Text px="2" key={index}>{sub_g} </Text>
+									))}
+								</Flex> */}
+							</Link>
+						</CardBody>
+					</Stack>
 				</Stack>
 			</Card>
 		</>

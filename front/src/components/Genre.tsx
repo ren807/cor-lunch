@@ -13,7 +13,7 @@ const Genre = () => {
 
 	return (
 		<>
-			<Heading as="h3" size="lg" m={2} >カテゴリ別に検索 🔍︎</Heading>
+			<Heading as="h3" size="lg" m={2} textAlign={{ base: "center", md: "left" }}>カテゴリ別に検索 🔍︎</Heading>
 			<SimpleGrid columns={[1, 2, 4]} spacing='40px' my={4}>
 				{genresData?.map((genre, index) => (
 					<Link 

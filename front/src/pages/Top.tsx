@@ -1,8 +1,11 @@
 import {
 	Box,
+	Grid,
 	Heading,
 	SimpleGrid,
 	Stack,
+	Wrap,
+	WrapItem,
 } from '@chakra-ui/react';
 import { useEffect } from 'react';
 
@@ -16,22 +19,24 @@ const Top = () => {
 
 	return (
 		<>
-			<Box px={7} pb={5}>
+			<Box mx={{ base: 5, md: 20}} pb={5}>
 				<Stack>
 					{/* カテゴリ一覧 */}
 					<Box my={4}>
 						<Genre />
 					</Box>
 					{/* おすすめ一覧 */}
-					<Box m={4}>
-						<Heading as="h3" size="lg" m={2}>本日のオススメの店舗 🎉</Heading>
-						<SimpleGrid columns={[1,null,2]} spacing={10} my={4}>
+					<Box mb={4} width="100%" >
+						<Heading as="h3" size="lg" my={2} textAlign={{ base: "center", md: "left" }}>本日のオススメの店舗 🎉</Heading>
+						<Wrap p={4} justifyContent="center" spacing="50px" display="flex" flexDirection="column" alignItems="center">
 							{shopsData?.map((shop, index) => (
-								<Box key={index}>
-									<Shop {...shop}/>
-								</Box>
+								<WrapItem key={index} >
+									<Box w="300px" minHeight="260px" borderRadius="10px" shadow="md" >
+										<Shop {...shop}/>
+									</Box>
+								</WrapItem>
 							))}
-						</SimpleGrid>
+						</Wrap>
 					</Box>
 				</Stack>
 			</Box>
