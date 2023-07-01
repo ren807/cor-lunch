@@ -28,10 +28,10 @@ const Top = () => {
 						<Heading as="h3" size="lg" mt={2} mb={5} textAlign={{ base: "center", md: "left" }}>
 							本日のオススメの店舗 🎉
 						</Heading>
-						<SimpleGrid columns={{ base: 1, md: 4 }} spacing="30px" >
+						<SimpleGrid columns={{ base: 1, md: 4 }} spacing={{base: "30px", md: "0px"}} >
 							{shopsData?.map((shop, index) => (
 								<WrapItem key={index} m="auto">
-									<Box w="320px" minHeight="260px" borderRadius="10px" shadow="md" >
+									<Box w="100%" minHeight="260px" borderRadius="10px" shadow="md" >
 										<Shop {...shop}/>
 									</Box>
 								</WrapItem>

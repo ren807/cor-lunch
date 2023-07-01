@@ -32,7 +32,7 @@ const Shop = (props: ShopDataType) => {
 					</Box>
 					<Stack>
 						<CardBody>
-							<Flex minWidth='max-content' alignItems='center' gap='5' >
+							<Flex minWidth='max-content' alignItems='center'>
 								<Box p='2'>
 									<Link to={path}>
 										<Heading size="md" isTruncated>{name}</Heading>
