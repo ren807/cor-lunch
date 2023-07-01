@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Flex, Heading, Spacer, IconButton, Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure } from '@chakra-ui/react';
+import { Box, Button, ButtonGroup, Flex, Heading, Spacer, IconButton, Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure, Stack } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -22,9 +22,36 @@ const Header = () => {
 		</ButtonGroup>
 	);
 
+	const BtnGroupSP = (props: any) => (
+		<Box gap='3' {...props} textAlign="center" fontWeight="bold">
+			<Box my={4}>
+				{location.pathname !== '/likes' && (
+					<Link
+						to="likes"
+						style={{display: 'block', color: "black", borderBottom: "2px solid orange"}}
+						onClick={onClose}
+					>
+						お気に入り
+					</Link>
+				)}
+			</Box>
+			<Box my={3}>
+				{location.pathname !== '/' &&(
+					<Link
+						to="/"
+						style={{display: 'block', color: "black", borderBottom: "2px solid orange"}}
+						onClick={onClose}
+					>
+						TOPに戻る
+					</Link>
+				)}
+			</Box>
+		</Box>
+	);
+
 	return (
 		<>
-			<Flex minWidth='max-content' alignItems='center' gap='2' m="3" mx='10'>
+			<Flex minWidth='max-content' alignItems='center' gap='2' m="3" mx='10' justifyContent="center">
 				<Box p='2' >
 					<Heading size='lg'>
 						<Link to="/">CoreTech グルメアプリ</Link>
@@ -44,9 +71,9 @@ const Header = () => {
 				<DrawerOverlay>
 					<DrawerContent>
 						<DrawerCloseButton />
-						<DrawerHeader>Menu</DrawerHeader>
+						<DrawerHeader textAlign="center">Menu</DrawerHeader>
 						<DrawerBody>
-							<BtnGroup flexDirection="column" />
+							<BtnGroupSP flexDirection="column" />
 						</DrawerBody>
 					</DrawerContent>
 				</DrawerOverlay>
