@@ -29,7 +29,7 @@ const Shop = (props: ShopDataType) => {
 				</Link>
 				<Stack>
 					<CardBody>
-						<Flex minWidth='max-content' alignItems='center' gap='2' >
+						<Flex minWidth='max-content' alignItems='center' gap='4' >
 							<Box p='2'>
 								<Link to={path}>
 									<Heading size="md" isTruncated>{name}</Heading>
@@ -38,13 +38,13 @@ const Shop = (props: ShopDataType) => {
 							<Icon w={6} h={6} cursor="pointer" color={like ? "red.400" : ""} as={like ? AiFillHeart : AiOutlineHeart} onClick={handleClickSwitchFlag}/>
 						</Flex>
 						<Link to={path}>
-							<Text py="2">{address}</Text>
+							{/* <Text py="2">{address}</Text> */}
 							<Text py="2">{genre}</Text>
-							<Flex wrap="wrap" py="2">
+							{/* <Flex wrap="wrap" py="2">
 								{sub_genre.map((sub_g: string, index: number) => (
 									<Text px="2" key={index}>{sub_g} </Text>
 								))}
-							</Flex>
+							</Flex> */}
 						</Link>
 					</CardBody>
 				</Stack>

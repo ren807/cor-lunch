@@ -13,8 +13,8 @@ const Genre = () => {
 
 	return (
 		<>
-			<Heading as="h3" size="lg" m={2}>カテゴリ別に検索</Heading>
-			<SimpleGrid columns={[1, 2, 4]} spacing='40px' mt={4}>
+			<Heading as="h3" size="lg" m={2} >カテゴリ別に検索 🔍︎</Heading>
+			<SimpleGrid columns={[1, 2, 4]} spacing='40px' my={4}>
 				{genresData?.map((genre, index) => (
 					<Link 
 						key={index}
