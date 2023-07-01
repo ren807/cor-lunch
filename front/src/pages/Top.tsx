@@ -20,7 +20,7 @@ const Top = () => {
 				<Stack>
 					{/* カテゴリ一覧 */}
 					<Box my={4}>
-						<Genre currentGenre="" />
+						<Genre />
 					</Box>
 					{/* おすすめ一覧 */}
 					<Box>
