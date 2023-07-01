@@ -6,7 +6,7 @@ import { ShopDataType } from '../db/Shops';
 import useLikes from '../hooks/useLikes';
 
 const Shop = (props: ShopDataType) => {
-	const { path, name, genre, photo} = props;
+	const { path, name, genre, photo, time_from_company} = props;
 
 	// いいね機能
 	const { like, handleClickSwitchFlag } = useLikes(props);
@@ -22,8 +22,7 @@ const Shop = (props: ShopDataType) => {
 					<Box >
 						<Link to={path}>
 							<Image
-								// width="100%"
-								boxSize="300px"
+								boxSize="320px"
 								src={photo}
 								objectFit="cover"
 								alt="画像が取得できませんでした"
@@ -33,7 +32,7 @@ const Shop = (props: ShopDataType) => {
 					</Box>
 					<Stack>
 						<CardBody>
-							<Flex minWidth='max-content' alignItems='center' gap='2' >
+							<Flex minWidth='max-content' alignItems='center' gap='5' >
 								<Box p='2'>
 									<Link to={path}>
 										<Heading size="md" isTruncated>{name}</Heading>
@@ -42,13 +41,8 @@ const Shop = (props: ShopDataType) => {
 								<Icon w={6} h={6} cursor="pointer" color={like ? "red.400" : ""} as={like ? AiFillHeart : AiOutlineHeart} onClick={handleClickSwitchFlag}/>
 							</Flex>
 							<Link to={path}>
-								{/* <Text py="2">{address}</Text> */}
-								<Text py="2">{genre}</Text>
-								{/* <Flex wrap="wrap" py="2">
-									{sub_genre.map((sub_g: string, index: number) => (
-										<Text px="2" key={index}>{sub_g} </Text>
-									))}
-								</Flex> */}
+								<Text py="2">会社から徒歩：{time_from_company}</Text>
+								<Text py="2">ジャンル：{genre}</Text>
 							</Link>
 						</CardBody>
 					</Stack>

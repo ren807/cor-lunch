@@ -26,12 +26,14 @@ const Top = () => {
 						<Genre />
 					</Box>
 					{/* おすすめ一覧 */}
-					<Box mb={4} width="100%" >
-						<Heading as="h3" size="lg" my={2} textAlign={{ base: "center", md: "left" }}>本日のオススメの店舗 🎉</Heading>
-						<Wrap p={4} justifyContent="center" spacing="50px" display="flex" flexDirection="column" alignItems="center">
+					<Box mb={4} width="100%">
+						<Heading as="h3" size="lg" my={2} textAlign={{ base: "center", md: "left" }}>
+							本日のオススメの店舗 🎉
+						</Heading>
+						<Wrap p={4} display="flex" justifyContent="center" spacing="80px" flexDirection="row" alignItems="flex-start">
 							{shopsData?.map((shop, index) => (
-								<WrapItem key={index} >
-									<Box w="300px" minHeight="260px" borderRadius="10px" shadow="md" >
+								<WrapItem key={index} m="auto">
+									<Box w="320px" minHeight="260px" borderRadius="10px" shadow="md" >
 										<Shop {...shop}/>
 									</Box>
 								</WrapItem>

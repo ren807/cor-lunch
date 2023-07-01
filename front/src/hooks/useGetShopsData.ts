@@ -8,7 +8,7 @@ const useGetShopsData = () => {
 		const shopsData = Shops();
 
 		// おすすめはランダム5件表示
-		setShopsData(shopsData.sort(() => Math.random() - 0.5).slice(0,5));
+		setShopsData(shopsData.sort(() => Math.random() - 0.5).slice(0,4));
 	}, []);
 
 	return { getShopsData , shopsData};
