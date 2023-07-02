@@ -20,9 +20,9 @@ const Shop = (props: ShopDataType) => {
 			>
 				<Stack>
 					<Box >
-						<Link to={path}>
+						<Link to={path} state={{ id: path }}>
 							<Image
-								boxSize="340px"
+								boxSize="360px"
 								src={photo}
 								objectFit="cover"
 								alt="画像が取得できませんでした"
@@ -31,18 +31,20 @@ const Shop = (props: ShopDataType) => {
 						</Link>
 					</Box>
 					<Stack>
-						<CardBody>
-							<Flex minWidth='max-content' alignItems='center'>
-								<Box p='2'>
-									<Link to={path}>
+						<CardBody py={5} px={10}>
+							<Flex minWidth='max-content' alignItems='center' pb={3}>
+								<Box width="250px">
+									<Link to={path} state={{ id: path }}>
 										<Heading size="md" isTruncated>{name}</Heading>
 									</Link>
 								</Box>
-								<Icon w={6} h={6} cursor="pointer" color={like ? "red.400" : ""} as={like ? AiFillHeart : AiOutlineHeart} onClick={handleClickSwitchFlag}/>
+								<Box>
+									<Icon w={6} h={6} cursor="pointer" color={like ? "red.400" : ""} as={like ? AiFillHeart : AiOutlineHeart} onClick={handleClickSwitchFlag}/>
+								</Box>
 							</Flex>
-							<Link to={path}>
-								<Text py="2">🚶‍♂ 会社から徒歩：{time_from_company}</Text>
-								<Text py="2">🍴 ジャンル：<Text as="span" fontWeight="bold">{genre}</Text></Text>
+							<Link to={path} state={{ id: path }}>
+								<Text py="2">🚶‍♂ 会社から：{time_from_company}</Text>
+								<Text py="1">🍴 ジャンル：<Text as="span" fontWeight="bold">{genre}</Text></Text>
 							</Link>
 						</CardBody>
 					</Stack>
