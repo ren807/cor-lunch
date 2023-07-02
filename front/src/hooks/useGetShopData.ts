@@ -5,7 +5,8 @@ const useGetShopData = () => {
 	const [shopData, setShopData] = useState<ShopDataType>();
 	const getShopData = useCallback((id: number) => {
 		const shopsData = Shops();
-		setShopData(shopsData[id]);
+	
+		setShopData(shopsData[id - 1]);
 	}, []);
 	return { getShopData, shopData };
 };

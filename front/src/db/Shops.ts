@@ -1,5 +1,5 @@
 export type ShopDataType = {
-	id: string;
+	id: number;
 	path: string;
 	name: string;
 	address: string;
@@ -11,13 +11,12 @@ export type ShopDataType = {
 	Regular_holiday: string;
 	time_from_company: string;
 	one_word: string;
-
 };
 
 export const Shops = (): Array<ShopDataType> => {
 	return [
 		{
-			id: "1",
+			id: 1,
 			path: "/shop/1",
 			name: "うさぎ",
 			address: "東京都渋谷区神泉町8-13 アーガス霜田ビル 1F",
@@ -31,7 +30,7 @@ export const Shops = (): Array<ShopDataType> => {
 			one_word: "",
 		},
 		{
-			id: "2",
+			id: 2,
 			path: "/shop/2",
 			name: "中華そば 満鶏軒",
 			address: "東京都渋谷区南平台町15-11 南平台野坂ビル 1F",
@@ -45,7 +44,7 @@ export const Shops = (): Array<ShopDataType> => {
 			one_word: "",
 		},
 		{
-			id: "3",
+			id: 3,
 			path: "/shop/3",
 			name: "トマトマン",
 			address: "東京都目黒区青葉台3-1-18",
@@ -59,7 +58,7 @@ export const Shops = (): Array<ShopDataType> => {
 			one_word: "",
 		},
 		{
-			id: "4",
+			id: 4,
 			path: "/shop/4",
 			name: "たつみ屋",
 			address: "東京都世田谷区池尻3丁目4-1",
@@ -73,7 +72,7 @@ export const Shops = (): Array<ShopDataType> => {
 			one_word: "",
 		},
 		{
-			id: "5",
+			id: 5,
 			path: "/shop/5",
 			name: "Oti",
 			address: "東京都目黒区青葉台3-10-11 青葉台フラッツ　2F",
@@ -87,7 +86,7 @@ export const Shops = (): Array<ShopDataType> => {
 			one_word: "",
 		},
 		{
-			id: "6",
+			id: 6,
 			path: "/shop/6",
 			name: "和利道 ",
 			address: "東京都目黒区青葉台3-10-11 青葉台フラッツ　2F",
@@ -101,7 +100,7 @@ export const Shops = (): Array<ShopDataType> => {
 			one_word: "",
 		},
 		{
-			id: "7",
+			id: 7,
 			path: "/shop/7",
 			name: "長寿庵 ",
 			address: "東京都目黒区東山3-4-7",
@@ -115,7 +114,7 @@ export const Shops = (): Array<ShopDataType> => {
 			one_word: "",
 		},
 		{
-			id: "8",
+			id: 8,
 			path: "/shop/8",
 			name: "橙 ",
 			address: "東京都目黒区大橋1-7-9 パークフラッツ中目黒 1F",
@@ -129,7 +128,7 @@ export const Shops = (): Array<ShopDataType> => {
 			one_word: "",
 		},
 		{
-			id: "9",
+			id: 9,
 			path: "/shop/9",
 			name: "万豚記",
 			address: "東京都目黒区東山3-13-3",
@@ -143,7 +142,7 @@ export const Shops = (): Array<ShopDataType> => {
 			one_word: "",
 		},
 		{
-			id: "10",
+			id: 10,
 			path: "/shop/10",
 			name: "シーメンハン",
 			address: "東京都目黒区大橋2-24-4 ホテルサーブ渋谷 1F",
@@ -157,7 +156,7 @@ export const Shops = (): Array<ShopDataType> => {
 			one_word: "",
 		},
 		{
-			id: "11",
+			id: 11,
 			path: "/shop/11",
 			name: "田燕 まるかく三",
 			address: "東京都目黒区大橋2-22-8 いちご池尻ビル 1F",
@@ -171,7 +170,7 @@ export const Shops = (): Array<ShopDataType> => {
 			one_word: "",
 		},
 		{
-			id: "12",
+			id: 12,
 			path: "/shop/12",
 			name: "ジャラナ",
 			address: "東京都目黒区青葉台2-1-1 ヴェルエ青葉台 2F",
@@ -185,7 +184,7 @@ export const Shops = (): Array<ShopDataType> => {
 			one_word: "",
 		},
 		{
-			id: "13",
+			id: 13,
 			path: "/shop/13",
 			name: "STARBUCKS RESERVE",
 			address: "東京都目黒区青葉台2-19-23",
@@ -199,7 +198,7 @@ export const Shops = (): Array<ShopDataType> => {
 			one_word: "",
 		},
 		{
-			id: "14",
+			id: 14,
 			path: "/shop/14",
 			name: "VIBES CURRY",
 			address: "東京都目黒区青葉台1-16-19 サクラガーデン E1",
@@ -213,7 +212,7 @@ export const Shops = (): Array<ShopDataType> => {
 			one_word: "",
 		},
 		{
-			id: "15",
+			id: 15,
 			path: "/shop/15",
 			name: "焼肉ANDY",
 			address: "東京都目黒区東山3-13-16 森ビル 1F",
@@ -227,7 +226,7 @@ export const Shops = (): Array<ShopDataType> => {
 			one_word: "",
 		},
 		{
-			id: "16",
+			id: 16,
 			path: "/shop/16",
 			name: "One.",
 			address: "東京都目黒区青葉台3-10-11 青葉台フラッツ 102",
@@ -241,7 +240,7 @@ export const Shops = (): Array<ShopDataType> => {
 			one_word: "",
 		},
 		{
-			id: "17",
+			id: 17,
 			path: "/shop/17",
 			name: "Indian Time",
 			address: "東京都目黒区大橋2-22-4 増本ビル B1F",
@@ -255,7 +254,7 @@ export const Shops = (): Array<ShopDataType> => {
 			one_word: "",
 		},
 		{
-			id: "18",
+			id: 18,
 			path: "/shop/18",
 			name: "富士㐂",
 			address: "東京都目黒区青葉台2-21-13 青葉台マンション 106号",
@@ -269,7 +268,7 @@ export const Shops = (): Array<ShopDataType> => {
 			one_word: "",
 		},
 		{
-			id: "19",
+			id: 19,
 			path: "/shop/19",
 			name: "池尻蕎麦",
 			address: "東京都世田谷区池尻3-2-3 サンケイグランドハイツ 1F",

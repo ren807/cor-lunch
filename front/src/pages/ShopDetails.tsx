@@ -1,10 +1,19 @@
-import { Box, CardBody, Divider, Flex, Heading, Icon, Image, Stack, Text } from '@chakra-ui/react';
+import { Box, Divider, Flex, Heading, Image, Text, } from '@chakra-ui/react';
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import useGetShopData from '../hooks/useGetShopData';
 
+type State = {
+	id: number;
+};
+
 const ShopDetails = () => {
+	// 　idを取得
+	const location = useLocation();
+	const { id } = location.state as State;
+
 	const { getShopData, shopData } = useGetShopData();
-	useEffect(() => getShopData(0), []);
+	useEffect(() => getShopData(id), []);
 
 	return (
 		<>

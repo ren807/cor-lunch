@@ -6,7 +6,7 @@ import { ShopDataType } from '../db/Shops';
 import useLikes from '../hooks/useLikes';
 
 const Shop = (props: ShopDataType) => {
-	const { path, name, genre, photo, time_from_company} = props;
+	const { id, path, name, genre, photo, time_from_company} = props;
 
 	// いいね機能
 	const { like, handleClickSwitchFlag } = useLikes(props);
@@ -20,7 +20,7 @@ const Shop = (props: ShopDataType) => {
 			>
 				<Stack>
 					<Box >
-						<Link to={path} state={{ id: path }}>
+						<Link to={path} state={{ id: id }}>
 							<Image
 								boxSize="360px"
 								src={photo}
