@@ -59,10 +59,10 @@ const ShopDetails = () => {
 							<Text py="2">⏱ 営業時間：{shopData?.business_hours}</Text>
 							<Text py="2">😴 定休日：{shopData?.Regular_holiday}</Text>
 							<Divider maxWidth="400px" alignSelf="center" borderWidth="1px" my={5} />
-							<Text>
+							{/* <Text>
 								ひとこと<br />
 								{shopData?.one_word}
-							</Text>
+							</Text> */}
 						</Box>
 					</Box>
 				</Flex>
