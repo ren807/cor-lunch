@@ -51,11 +51,13 @@ const Header = () => {
 
 	return (
 		<>
-			<Flex minWidth='max-content' alignItems='center' gap='2' m="3" mx='10' justifyContent="center">
+			<Flex alignItems='center' gap='2' m="3" justifyContent="center">
 				<Box p='2' >
-					<Heading size='lg'>
-						<Link to="/">CoreTech グルメアプリ</Link>
-					</Heading>
+					<Link to="/">
+						<Heading size={{ base: 'md', md:'lg'}}>
+								CoreTech グルメアプリ
+						</Heading>
+					</Link>
 				</Box>
 				<Spacer />
 				<IconButton
