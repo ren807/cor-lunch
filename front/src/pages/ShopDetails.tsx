@@ -1,7 +1,9 @@
-import { Box, Divider, Flex, Heading, Image, Text, } from '@chakra-ui/react';
+import { Box, Divider, Flex, Heading, Icon, Image, Text, } from '@chakra-ui/react';
 import { useEffect } from 'react';
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { useLocation } from 'react-router-dom';
 import useGetShopData from '../hooks/useGetShopData';
+import useLikes from '../hooks/useLikes';
 
 type State = {
 	id: number;
@@ -15,13 +17,16 @@ const ShopDetails = () => {
 	const { getShopData, shopData } = useGetShopData();
 	useEffect(() => getShopData(id), []);
 
+	// いいね機能
+	const { like, handleClickSwitchFlag } = useLikes(shopData);
+
 	return (
 		<>
-			<Flex height={{base: "100%", md: "80vh"}} justifyContent="center" alignItems="center" mt={8}>
-				<Flex direction={{base: "column", md: "row"}} >
+			<Flex height={{base: "100%", md: "80vh"}} justifyContent="center" mt={8}>
+				<Flex direction={{base: "column", md: "row"}} alignItems="center" >
 					<Box >
 						<Image
-							boxSize={{base: "85%", md: "500px"}}
+							boxSize={{base: "95%", md: "500px"}}
 							src={shopData?.photo}
 							objectFit="cover"
 							alt="画像が取得できませんでした"
@@ -29,11 +34,11 @@ const ShopDetails = () => {
 						/>
 					</Box>
 					<Box width={{base: "100%", md: "500px"}} py={4} marginLeft={{base: "0", md: "10"}}>
-						<Flex minWidth='max-content' alignItems='center'>
-							<Box p='2' mx={{base: "auto", md: "0"}}>
+						<Flex minWidth='max-content' justifyContent={{base: "center", md: "left"}} alignItems='center' mx="auto">
+							<Box p='2' >
 								<Heading size={{base: "md", md: "xl"}} isTruncated>{shopData?.name}</Heading>
 							</Box>
-							{/* <Icon w={6} h={6} cursor="pointer" color={like ? "red.400" : ""} as={like ? AiFillHeart : AiOutlineHeart} onClick={handleClickSwitchFlag}/> */}
+							<Icon w={6} h={6} cursor="pointer" color={like ? "red.400" : ""} as={like ? AiFillHeart : AiOutlineHeart} onClick={handleClickSwitchFlag}/>
 						</Flex>
 						<Box mx={5}>
 							<Text py="2">
@@ -41,7 +46,7 @@ const ShopDetails = () => {
 									<Text as="span" fontWeight="bold">
 										<>
 											{shopData?.genre}
-											{shopData?.sub_genre.map((tag: string, index) => {
+											{shopData?.sub_genre.map((tag: string) => {
 												return `、${tag}`;
 											})}
 										</>
