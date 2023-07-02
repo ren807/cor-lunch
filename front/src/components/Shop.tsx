@@ -13,43 +13,35 @@ const Shop = (props: ShopDataType) => {
 
 	return (
 		<>
-			<Card 
-				direction={{ base: 'column', sm: 'row' }}
-				overflow="hidden" 
-				variant="outline"
-			>
+			<Box maxW="90vw" overflowX="hidden" p={0} m={0}>
 				<Stack>
-					<Box >
-						<Link to={path} state={{ id: id }}>
-							<Image
-								boxSize="360px"
-								src={photo}
-								objectFit="cover"
-								alt="画像が取得できませんでした"
-								m="auto"
-							/>
-						</Link>
-					</Box>
+					<Link to={path} state={{ id: id }}>
+						<Image
+							boxSize={{base: "360px", md: "360px"}}
+							w="100vw"
+							src={photo}
+							objectFit="cover"
+							alt="画像が取得できませんでした"
+						/>
+					</Link>
 					<Stack>
-						<CardBody py={5} px={10}>
-							<Flex minWidth='max-content' alignItems='center' pb={3}>
-								<Box width="250px">
+						<Box py={5} px={{base: 3, md: 10}}>
+							<Flex minWidth='max-content' justifyContent="left" alignItems='center' mx="auto">
+								<Box p='2' >
 									<Link to={path} state={{ id: path }}>
 										<Heading size="md" isTruncated>{name}</Heading>
 									</Link>
 								</Box>
-								<Box>
-									<Icon w={6} h={6} cursor="pointer" color={like ? "red.400" : ""} as={like ? AiFillHeart : AiOutlineHeart} onClick={handleClickSwitchFlag}/>
-								</Box>
-							</Flex>
+							<Icon w={6} h={6} cursor="pointer" color={like ? "red.400" : ""} as={like ? AiFillHeart : AiOutlineHeart} onClick={handleClickSwitchFlag}/>
+						</Flex>
 							<Link to={path} state={{ id: path }}>
 								<Text py="2">🚶‍♂ 会社から：{time_from_company}</Text>
 								<Text py="1">🍴 ジャンル：<Text as="span" fontWeight="bold">{genre}</Text></Text>
 							</Link>
-						</CardBody>
+						</Box>
 					</Stack>
 				</Stack>
-			</Card>
+			</Box>
 		</>
 	);
 };

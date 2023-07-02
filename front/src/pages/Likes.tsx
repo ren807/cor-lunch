@@ -3,9 +3,9 @@ import {
 	Button,
 	Flex,
 	Heading,
-	SimpleGrid,
 	Stack,
 	Text,
+	Wrap,
 	WrapItem,
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
@@ -34,15 +34,14 @@ const Like = () => {
 							<Heading as="h3" size="lg" mt={5} mb={10} textAlign={{ base: "center", md: "left" }}>
 								お気に入り店舗 ❤
 							</Heading>
-							<SimpleGrid columns={{ base: 1, md: 4 }} spacing={{base: "30px", md: "0px"}} >
+							{/* 店舗カード */}
+							<Wrap spacing="30px" >
 								{shopsData?.map((shop, index) => (
-									<WrapItem key={index} m="auto">
-										<Box w="100%" minHeight="260px" borderRadius="10px" shadow="md" >
-											<Shop {...shop}/>
-										</Box>
+									<WrapItem key={index} m="auto" shadow="md">
+										<Shop {...shop}/>
 									</WrapItem>
 								))}
-							</SimpleGrid>
+							</Wrap>
 						</Box>
 					</Stack>
 				</Box>
