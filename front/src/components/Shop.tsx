@@ -25,7 +25,7 @@ const Shop = (props: ShopDataType) => {
 						/>
 					</Link>
 					<Stack>
-						<Box py={5} px={{base: 3, md: 10}}>
+						<Box py={5} px={{base: 4, md: 10}} >
 							<Flex minWidth='max-content' justifyContent="left" alignItems='center' mx="auto">
 								<Box p='2' >
 									<Link to={path} state={{ id: path }}>
