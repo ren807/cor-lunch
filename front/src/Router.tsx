@@ -16,9 +16,7 @@ const Router = () => {
 					<Route path="category">
 						<Route path=":genreName" element={<ShopGenre />}/>
 					</Route>
-					<Route path="shop">
-						<Route path=":shopId" element={<ShopDetails />} />
-					</Route>
+					<Route path="shop/:shopId" element={<ShopDetails />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>

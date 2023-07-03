@@ -1,21 +1,35 @@
 import { Box, Divider, Flex, Heading, Icon, Image, Text, } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
-import { useLocation } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import useGetShopData from '../hooks/useGetShopData';
 import useLikes from '../hooks/useLikes';
 
-type State = {
-	id: number;
+type ShopParams = {
+	shopId: string;
 };
 
 const ShopDetails = () => {
-	// 　idを取得
-	const location = useLocation();
-	const { id } = location.state as State;
 
-	const { getShopData, shopData } = useGetShopData();
-	useEffect(() => getShopData(id), []);
+	// URLから値を引っ張ってくる
+	const { shopId } = useParams<ShopParams>();
+	const navigate = useNavigate(); 
+	const { getShopData, shopData, error } = useGetShopData();
+
+	useEffect(() => {
+		if (shopId !== undefined) {
+			const id = parseInt(shopId);
+			if (!isNaN(id)) {
+				getShopData(id)
+			}
+		}
+	}, [shopId]);
+
+	useEffect(() => {
+		if (error) {
+			navigate('/');
+		}
+	  }, [error, navigate]);
 
 	// いいね機能
 	const { like, handleClickSwitchFlag } = useLikes(shopData);
