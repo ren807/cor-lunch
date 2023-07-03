@@ -1,22 +1,27 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { Box, Heading, Stack, Wrap, WrapItem } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import useGetShopsGenre from '../hooks/useGetShopsGenre';
 import Shop from '../components/Shop';
 import Genre from '../components/Genre';
 
-type State = {
-	genre: string;
+type GenreParams = {
+	genreName: string;
 };
 
 const ShopGenre = () => {
-	// ジャンルの値を取得
-	const location = useLocation();
-	const { genre } = location.state as State;
-	
-	// ジャンル検索
-	const { getShopsData, shopsData } = useGetShopsGenre(genre);
-	useEffect(() => getShopsData(), [genre]);
+	const navigate = useNavigate();
+	const { genreName } = useParams<GenreParams>();
+	console.log(genreName);
+	const { getShopsData, shopsData } = useGetShopsGenre(genreName);
+  
+	useEffect(() => { 
+	  if (genreName !== undefined) {
+		getShopsData();
+	  } else {
+		navigate('/');
+	  }
+	}, [genreName, getShopsData, navigate]);
 
 	return (
 		<>
@@ -29,7 +34,7 @@ const ShopGenre = () => {
 					{/* おすすめ一覧 */}
 					<Box mb={4} width="100%">
 						<Heading as="h3" size="lg" mt={2} mb={5} textAlign={{ base: "center", md: "left" }}>
-							青葉台周辺の{genre} 😋
+							青葉台周辺の{genreName} 😋
 						</Heading>
 						{/* 店舗カード */}
 						<Wrap spacing="30px" >

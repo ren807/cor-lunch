@@ -13,9 +13,7 @@ const Router = () => {
 				<Route path="/" element={<Template />}>
 					<Route index element={<Top />} />
 					<Route path="likes" element={<Likes />} />
-					<Route path="category">
-						<Route path=":genreName" element={<ShopGenre />}/>
-					</Route>
+					<Route path="category/:genreName" element={<ShopGenre />}/>
 					<Route path="shop/:shopId" element={<ShopDetails />} />
 				</Route>
 			</Routes>
