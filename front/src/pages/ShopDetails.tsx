@@ -29,7 +29,7 @@ const ShopDetails = () => {
 		if (error) {
 			navigate('/');
 		}
-	  }, [error, navigate]);
+	}, [error, navigate]);
 
 	// いいね機能
 	const { like, handleClickSwitchFlag } = useLikes(shopData);

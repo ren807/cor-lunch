@@ -9,15 +9,15 @@ const useGetShopsGenre = (genre: string | undefined) => {
 
 		if (genre !== undefined) {
 			const shopsData = Shops();
-	  
+
 			// フィルタリング
 			const filteredShopsData = shopsData.filter((shop) => shop.genre_kana === genre);
-			setShopsData(filteredShopsData);
-		  } else {
-			setShopsData(null);
-		  }
+				setShopsData(filteredShopsData);
+			} else {
+				setShopsData(null);
+			}
 	}, [genre]);
-	
+
 	return { getShopsData , shopsData};
 };
 

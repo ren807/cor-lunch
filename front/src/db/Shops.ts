@@ -292,7 +292,7 @@ export const Shops = (): Array<ShopDataType> => {
 			name: "池尻蕎麦",
 			address: "東京都世田谷区池尻3-2-3 サンケイグランドハイツ 1F",
 			genre: "麺類",
-			genre_kana: "chineseFood",
+			genre_kana: "noodle",
 			sub_genre: ["立ち食いそば","うどん","立ち飲み"],
 			photo: "https://core-app-s3.s3.ap-northeast-1.amazonaws.com/%E6%B1%A0%E5%B0%BB%E8%95%8E%E9%BA%A6.jpeg",
 			Recommended_number_of_people: "1~2人",
