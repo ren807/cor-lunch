@@ -1,53 +1,45 @@
 import {
 	Box,
-	Button,
-	Checkbox,
-	CheckboxGroup,
 	Heading,
-	ListItem,
 	Stack,
-	UnorderedList,
+	Wrap,
+	WrapItem,
 } from '@chakra-ui/react';
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+
+import Genre from '../components/Genre';
+import Shop from '../components/Shop';
+import useGetShopsData from '../hooks/useGetShopsData';
 
 const Top = () => {
-	const navigate = useNavigate();
-
-	const onClickSearchButton = () => {
-		navigate('shops');
-	};
+	const { getShopsData, shopsData } = useGetShopsData();
+	useEffect(() => getShopsData(), [getShopsData]);
 
 	return (
-		<Box p="20px">
-			<Stack>
-				<Heading as="h2">これはTOPページです！</Heading>
-				<hr />
-				<Heading as="h3">食べたいものを選んで検索！</Heading>
-				<Box>
-					<CheckboxGroup>
-						<Stack spacing="16px" direction="row">
-							<Checkbox value="ラーメン">ラーメン</Checkbox>
-							<Checkbox value="中華">中華</Checkbox>
-							<Checkbox value="定食">定食</Checkbox>
-						</Stack>
-					</CheckboxGroup>
-					<Button onClick={onClickSearchButton}>検索</Button>
-				</Box>
-				<Heading as="h3">オススメの店舗！</Heading>
-				<UnorderedList>
-					<ListItem>
-						<Link to="shops/1">店舗1</Link>
-					</ListItem>
-					<ListItem>
-						<Link to="shops/2">店舗2</Link>
-					</ListItem>
-					<ListItem>
-						<Link to="shops/3">店舗3</Link>
-					</ListItem>
-				</UnorderedList>
-			</Stack>
-		</Box>
+		<>
+			<Box mx={{ base: 5, md: 20}} pb={5}>
+				<Stack>
+					{/* カテゴリ一覧 */}
+					<Box my={4}>
+						<Genre />
+					</Box>
+					{/* おすすめ一覧 */}
+					<Box mb={4} width="100%">
+						<Heading as="h3" size="lg" mt={2} mb={5} textAlign={{ base: "center", md: "left" }}>
+							本日のオススメの店舗 🎉
+						</Heading>
+						{/* 店舗カード */}
+						<Wrap spacing="30px">
+							{shopsData?.map((shop, index) => (
+								<WrapItem key={index} m="auto" shadow="md">
+									<Shop {...shop}/>
+								</WrapItem>
+							))}
+						</Wrap>
+					</Box>
+				</Stack>
+			</Box>
+		</>
 	);
 };
 
