@@ -24,8 +24,8 @@
 
  色彩の記事
 
-https://tokila.jp/how-to-coordinate-colors/{:target="_blank"}
+https://tokila.jp/how-to-coordinate-colors/
 
  捕色の記事
 
-https://allabout.co.jp/gm/gc/475713/{:target="_blank"}
+https://allabout.co.jp/gm/gc/475713/
