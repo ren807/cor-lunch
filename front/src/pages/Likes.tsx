@@ -5,21 +5,19 @@ import {
 	Heading,
 	Stack,
 	Text,
-	Wrap,
-	WrapItem,
-} from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+} from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-import Shop from '../components/Shop';
-import { ShopDataType } from '../db/Shops';
+import ShopList from "../components/ShopList";
+import { ShopDataType } from "../db/Shops";
 
 const Like = () => {
 
 	const [ shopsData, setShopsData ] = useState<Array<ShopDataType> | null>(null);
 
 	useEffect(() => {
-		const storedLikes = localStorage.getItem('likes');
+		const storedLikes = localStorage.getItem("likes");
 		const likesArray = storedLikes ? JSON.parse(storedLikes) : [];
 		setShopsData(likesArray);
 	}, []);
@@ -27,23 +25,11 @@ const Like = () => {
 	return (
 		<>
 			{shopsData != null && shopsData.length > 0 ? (
-				<Box mx={{ base: 5, md: 20}} pb={5}>
-					<Stack>
-						{/* おすすめ一覧 */}
-						<Box my={4} width="100%">
-							<Heading as="h3" size="lg" mt={5} mb={10} textAlign={{ base: "center", md: "left" }}>
-								お気に入り店舗 ❤
-							</Heading>
-							{/* 店舗カード */}
-							<Wrap spacing="30px" >
-								{shopsData?.map((shop, index) => (
-									<WrapItem key={index} m="auto" shadow="md">
-										<Shop {...shop}/>
-									</WrapItem>
-								))}
-							</Wrap>
-						</Box>
-					</Stack>
+				<Box my={5} px={5} mx="auto" maxWidth="1600px">
+					<Heading as="h3" size="lg" my={8} textAlign={{ base: "center", md: "left" }}>
+						お気に入り店舗 ❤
+					</Heading>
+					<ShopList shopsData={shopsData} />
 				</Box>
 			) : (
 				<>
@@ -59,7 +45,7 @@ const Like = () => {
 							</Text>
 							<Box display="flex" justifyContent="center" alignItems="center">
 								<Link to="/">
-									<Button color="black" _hover={{ bg: 'rgba(248, 157, 5, 0.8)' }}>お店を探しに行く</Button>
+									<Button color="black" _hover={{ bg: "rgba(248, 157, 5, 0.8)" }}>お店を探しに行く</Button>
 								</Link>
 							</Box>
 						</Stack>

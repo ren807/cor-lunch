@@ -12,6 +12,7 @@ export type ShopDataType = {
 	Regular_holiday: string;
 	time_from_company: string;
 	one_word: string;
+	index?: number;
 };
 
 export const Shops = (): Array<ShopDataType> => {

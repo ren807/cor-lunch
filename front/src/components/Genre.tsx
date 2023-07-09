@@ -13,7 +13,6 @@ const Genre = () => {
 
 	return (
 		<>
-			<Heading as="h3" size="lg" my={8} textAlign={{ base: "center", md: "left" }}>カテゴリ別に検索 🔍︎</Heading>
 			<Grid templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(8, 1fr)", lg: "repeat(12, 1fr)" }} gap={6} >
 				{genresData?.map((genre, index) => (
 					<GridItem colSpan={{ base: 1, md: 4, lg: 3 }} >

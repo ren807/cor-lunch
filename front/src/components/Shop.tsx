@@ -13,7 +13,7 @@ const Shop = (props: ShopDataType) => {
 
 	return (
 		<>
-			<Box maxW="90vw" overflowX="hidden" p={0} m={0}>
+			<Box maxW="90vw" overflowX="hidden" p={0} m="auto" shadow="md">
 				<Stack>
 					<Link to={path} state={{ id: id }}>
 						<Image

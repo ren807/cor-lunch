@@ -1,9 +1,10 @@
-import { useNavigate, useParams } from 'react-router-dom';
-import { Box, Heading, Stack, Wrap, WrapItem } from '@chakra-ui/react';
-import { useEffect } from 'react';
-import useGetShopsGenre from '../hooks/useGetShopsGenre';
-import Shop from '../components/Shop';
-import Genre from '../components/Genre';
+import { useNavigate, useParams } from "react-router-dom";
+import { Box, Heading} from "@chakra-ui/react";
+import { useEffect } from "react";
+
+import useGetShopsGenre from "../hooks/useGetShopsGenre";
+import Genre from "../components/Genre";
+import ShopList from "../components/ShopList";
 
 type GenreParams = {
 	genreName: string;
@@ -18,33 +19,21 @@ const ShopGenre = () => {
 		if (genreName !== undefined) {
 			getShopsData();
 		} else {
-			navigate('/');
+			navigate("/");
 		}
 	}, [genreName, getShopsData, navigate]);
 
 	return (
 		<>
-			<Box mx={{ base: 5, md: 20}} pb={5}>
-				<Stack>
-					{/* カテゴリ一覧 */}
-					<Box my={4}>
-						<Genre />
-					</Box>
-					{/* おすすめ一覧 */}
-					<Box mb={4} width="100%">
-						<Heading as="h3" size="lg" mt={2} mb={5} textAlign={{ base: "center", md: "left" }}>
-							青葉台周辺の{shopsData?.[0].genre} 😋
-						</Heading>
-						{/* 店舗カード */}
-						<Wrap spacing="30px" >
-							{shopsData?.map((shop, index) => (
-								<WrapItem key={index} m="auto" shadow="md" >
-									<Shop {...shop}/>
-								</WrapItem>
-							))}
-						</Wrap>
-					</Box>
-				</Stack>
+			<Box my={5} px={5} mx="auto" maxWidth="1600px">
+				<Heading as="h3" size="lg" my={8} textAlign={{ base: "center", md: "left" }}>
+					カテゴリ別に検索 🔍︎
+				</Heading>
+				<Genre />
+				<Heading as="h3" size="lg" my={8} textAlign={{ base: "center", md: "left" }}>
+					青葉台周辺の{shopsData?.[0].genre} 😋
+				</Heading>
+				<ShopList shopsData={shopsData} />
 			</Box>
 		</>
 	);
