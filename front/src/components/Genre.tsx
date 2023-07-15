@@ -15,7 +15,7 @@ const Genre = () => {
 		<>
 			<Grid templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(8, 1fr)", lg: "repeat(12, 1fr)" }} gap={6} >
 				{genresData?.map((genre, index) => (
-					<GridItem colSpan={{ base: 1, md: 4, lg: 3 }} >
+					<GridItem colSpan={{ base: 1, md: 4, lg: 3 }} borderRadius="5px" overflow="hidden">
 						<Link key={index} to={genre.path} state={{ genre: genre.name }} onClick={() => setCurrentGenre(genre.path)} >
 							<Box position="relative" color="black" height="120px" display="flex" justifyContent="center" alignItems="center" >
 								<Box position="absolute" top="0" left="0" right="0" bottom="0"

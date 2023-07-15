@@ -13,37 +13,35 @@ const Shop = (props: ShopDataType) => {
 
 	return (
 		<>
-			<Box maxW="90vw" overflowX="hidden" p={0} m="auto" shadow="md">
-				<Grid templateColumns={{ base: "1fr", md: "1fr" }} gap={5}>
-					<Link to={path} state={{ id: id }}>
-						<Box h={{base: "200px", md: "360px"}} w="100%" overflow="hidden">
-							<Image
-								w="100%"
-								h="100%"
-								src={photo}
-								objectFit="cover"
-								alt="画像が取得できませんでした"
-							/>
-						</Box>
-					</Link>
-					<Grid templateColumns="1fr 6fr 1fr" alignItems="center">
-						<Box py={5} px={{base: 4, md: 10}} >
-							<Flex minWidth='max-content' justifyContent="left" alignItems='center' mx="auto">
-								<Box p='2' >
-									<Link to={path} state={{ id: id }}>
-										<Heading size="md" isTruncated>{name}</Heading>
-									</Link>
-								</Box>
+			<Grid templateColumns="1fr" shadow="md" borderRadius="10px" overflow="hidden">
+				<Link to={path} state={{ id: id }}>
+					<Box h={{base: "250px", md: "360px"}} w="100%" >
+						<Image
+							w="100%"
+							h="100%"
+							src={photo}
+							objectFit="cover"
+							alt="画像が取得できませんでした"
+						/>
+					</Box>
+				</Link>
+				<Grid templateColumns="1fr">
+					<Box py={5} px={{base: 4, md: 10}}>
+						<Flex minWidth='max-content' justifyContent="left" alignItems='center' mx="auto">
+							<Box p={2}>
+								<Link to={path} state={{ id: id }}>
+									<Heading size="md" isTruncated>{name}</Heading>
+								</Link>
+							</Box>
 							<Icon w={6} h={6} cursor="pointer" color={like ? "red.400" : ""} as={like ? AiFillHeart : AiOutlineHeart} onClick={handleClickSwitchFlag}/>
-							</Flex>
-							<Link to={path} state={{ id: id }}>
-								<Text py="2">🚶‍♂ 会社から：{time_from_company}</Text>
-								<Text py="1">🍴 ジャンル：<Text as="span" fontWeight="bold">{genre}</Text></Text>
-							</Link>
-						</Box>
-					</Grid>
+						</Flex>
+						<Link to={path} state={{ id: id }}>
+							<Text py={2}>🚶‍♂ 会社から：{time_from_company}</Text>
+							<Text py={1}>🍴<Text as="span" fontWeight="bold">{genre}</Text></Text>
+						</Link>
+					</Box>
 				</Grid>
-			</Box>
+			</Grid>
 		</>
 	);
 };
