@@ -9,8 +9,8 @@ const Template = () => {
 				<Box flex="1" >
 					<Header />
 					<Outlet />
+					<Footer />
 				</Box>
-			<Footer />
 		</Flex>
 	);
 };

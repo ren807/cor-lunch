@@ -38,9 +38,10 @@ const ShopDetails = () => {
 		<>
 			<Flex height={{base: "100%", md: "80vh"}} justifyContent="center" mt={8}>
 				<Flex direction={{base: "column", md: "row"}} alignItems="center" >
-					<Box >
+					<Box h={{base: "300px", md: "360px"}} w="90%">
 						<Image
-							boxSize={{base: "95%", md: "500px"}}
+							w="100%"
+							h="100%"
 							src={shopData?.photo}
 							objectFit="cover"
 							alt="画像が取得できませんでした"
@@ -66,7 +67,7 @@ const ShopDetails = () => {
 										</>
 									</Text>
 							</Text>
-							<Text py="2" fontSize="sm">🏢 {shopData?.address}</Text>
+							<Text py="2" fontSize="sm">{shopData?.address}</Text>
 							<Divider maxWidth="400px" alignSelf="center" borderWidth="1px" my={5} />
 							<Text py="2">🚶‍♂ 会社から：{shopData?.time_from_company}</Text>
 							<Text py="2">👥 推奨人数：{shopData?.Recommended_number_of_people}</Text>
