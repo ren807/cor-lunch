@@ -1,6 +1,7 @@
 import {
 	Box,
 	Heading,
+	Stack,
 } from "@chakra-ui/react";
 import { useEffect } from "react";
 
@@ -15,14 +16,16 @@ const Top = () => {
 	return (
 		<>
 			<Box my={5} px={5} mx="auto" maxWidth="1600px">
-				<Heading as="h3" size="lg" my={8} textAlign={{ base: "center", md: "left" }}>
-					カテゴリ別に検索 🔍︎
-				</Heading>
-				<Genre />
-				<Heading as="h3" size="lg" my={8} textAlign={{ base: "center", md: "left" }}>
-					本日のオススメの店舗 🎉
-				</Heading>
-				<ShopList shopsData={shopsData} />
+				<Stack spacing={7}>
+					<Heading as="h3" size="lg" textAlign={{ base: "center", md: "left" }}>
+						カテゴリ別に検索 🔍︎
+					</Heading>
+					<Genre />
+					<Heading as="h3" size="lg" textAlign={{ base: "center", md: "left" }}>
+						本日のオススメの店舗 🎉
+					</Heading>
+					<ShopList shopsData={shopsData} />
+				</Stack>
 			</Box>
 		</>
 	);
