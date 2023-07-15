@@ -26,10 +26,12 @@ const Like = () => {
 		<>
 			{shopsData != null && shopsData.length > 0 ? (
 				<Box my={5} px={5} mx="auto" maxWidth="1600px">
-					<Heading as="h3" size="lg" my={8} textAlign={{ base: "center", md: "left" }} style={{ fontFamily: "'Noto Sans JP', sans-serif" }}>
-						お気に入り店舗 ❤
-					</Heading>
-					<ShopList shopsData={shopsData} />
+					<Stack spacing={7}>
+						<Heading size="lg" textAlign={{ base: "center", md: "left" }} >
+							お気に入り店舗 ❤
+						</Heading>
+						<ShopList shopsData={shopsData} />
+					</Stack>
 				</Box>
 			) : (
 				<>
