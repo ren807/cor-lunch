@@ -1,9 +1,9 @@
-import { Box, Card, CardBody, Flex, Grid, Heading, Icon, Image, Stack, Text } from '@chakra-ui/react';
-import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import { Box, Flex, Grid, Heading, Icon, Image, Text } from "@chakra-ui/react";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
-import { ShopDataType } from '../db/Shops';
-import useLikes from '../hooks/useLikes';
+import { ShopDataType } from "../db/Shops";
+import useLikes from "../hooks/useLikes";
 
 const Shop = (props: ShopDataType) => {
 	const { id, path, name, genre, photo, time_from_company} = props;
@@ -27,7 +27,7 @@ const Shop = (props: ShopDataType) => {
 				</Link>
 				<Grid templateColumns="1fr">
 					<Box py={5} px={{base: 4, md: 10}}>
-						<Flex minWidth='max-content' justifyContent="left" alignItems='center' mx="auto">
+						<Flex minWidth="max-content" justifyContent="left" alignItems="center" mx="auto">
 							<Box p={2}>
 								<Link to={path} state={{ id: id }}>
 									<Heading size="md" isTruncated>{name}</Heading>
