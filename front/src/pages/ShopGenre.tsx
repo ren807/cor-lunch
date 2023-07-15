@@ -26,11 +26,11 @@ const ShopGenre = () => {
 	return (
 		<>
 			<Box my={5} px={5} mx="auto" maxWidth="1600px">
-				<Heading as="h3" size="lg" my={8} textAlign={{ base: "center", md: "left" }}>
+				<Heading as="h3" size="lg" my={8} textAlign={{ base: "center", md: "left" }} style={{ fontFamily: "'Noto Sans JP', sans-serif" }}>
 					カテゴリ別に検索 🔍︎
 				</Heading>
 				<Genre />
-				<Heading as="h3" size="lg" my={8} textAlign={{ base: "center", md: "left" }}>
+				<Heading as="h3" size="lg" my={8} textAlign={{ base: "center", md: "left" }} style={{ fontFamily: "'Noto Sans JP', sans-serif" }}>
 					青葉台周辺の{shopsData?.[0].genre} 😋
 				</Heading>
 				<ShopList shopsData={shopsData} />

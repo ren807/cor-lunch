@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Flex, Heading, Spacer, IconButton, Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure, Stack } from '@chakra-ui/react';
+import { Box, Button, ButtonGroup, Flex, Heading, Spacer, IconButton, Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure, Stack, Grid } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -51,15 +51,12 @@ const Header = () => {
 
 	return (
 		<>
-			<Flex alignItems='center' gap='2' m="3" justifyContent="center">
-				<Box p='2' >
-					<Link to="/">
-						<Heading size={{ base: 'md', md:'lg'}}>
-								CoreTech グルメアプリ
-						</Heading>
-					</Link>
-				</Box>
-				<Spacer />
+			<Flex justifyContent="space-between" my={5} px={5} maxWidth="1600px" mx="auto" alignItems="center">
+				<Link to="/">
+					<Heading size={{ base: "md", md:"lg"}} textAlign={{ base: "center", md: "left" }} style={{ fontFamily: "'Noto Sans JP', sans-serif" }}>
+						CoreTech グルメアプリ
+					</Heading>
+				</Link>
 				<IconButton
 					display={{ base: "flex", md: "none" }}
 					aria-label="Open menu"

@@ -17,11 +17,11 @@ const Top = () => {
 		<>
 			<Box my={5} px={5} mx="auto" maxWidth="1600px">
 				<Stack spacing={7}>
-					<Heading as="h3" size="lg" textAlign={{ base: "center", md: "left" }}>
+					<Heading size="lg" textAlign={{ base: "center", md: "left" }} style={{ fontFamily: "'Noto Sans JP', sans-serif" }}>
 						カテゴリ別に検索 🔍︎
 					</Heading>
 					<Genre />
-					<Heading as="h3" size="lg" textAlign={{ base: "center", md: "left" }}>
+					<Heading size="lg" textAlign={{ base: "center", md: "left" }} style={{ fontFamily: "'Noto Sans JP', sans-serif" }}>
 						本日のオススメの店舗 🎉
 					</Heading>
 					<ShopList shopsData={shopsData} />

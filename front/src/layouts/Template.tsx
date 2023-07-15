@@ -6,8 +6,8 @@ import { Box, Flex } from '@chakra-ui/react';
 const Template = () => {
 	return (
 		<Flex direction="column" minHeight="100vh">
-			<Header />
 				<Box flex="1" >
+					<Header />
 					<Outlet />
 				</Box>
 			<Footer />
