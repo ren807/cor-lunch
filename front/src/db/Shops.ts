@@ -301,6 +301,21 @@ export const Shops = (): Array<ShopDataType> => {
 			Regular_holiday: "無休",
 			time_from_company: "8~10分",
 			one_word: "",
+		},
+		{
+			id: 20,
+			path: "/shop/20",
+			name: "393 BURGER",
+			address: "東京都目黒区東山3-14-3 東山共同ビル 1F",
+			genre: "その他",
+			genre_kana: "other",
+			sub_genre: ["ハンバーガー"],
+			photo: "https://core-app-s3.s3.ap-northeast-1.amazonaws.com/393.jpeg",
+			Recommended_number_of_people: "1~4人",
+			business_hours: "11:00～23:00",
+			Regular_holiday: "無休",
+			time_from_company: "8~10分",
+			one_word: "",
 		}
 	];
 };
