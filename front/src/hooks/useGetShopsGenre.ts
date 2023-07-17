@@ -1,5 +1,5 @@
-import { useCallback, useState } from 'react';
-import { ShopDataType, Shops } from '../db/Shops';
+import { useCallback, useState } from "react";
+import { ShopDataType, Shops } from "../db/Shops";
 
 const useGetShopsGenre = (genre: string | undefined) => {
 	const [shopsData, setShopsData] = useState<Array<ShopDataType> | null>(null);

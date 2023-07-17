@@ -1,5 +1,5 @@
-import { useCallback, useState } from 'react';
-import { ShopDataType, Shops } from '../db/Shops';
+import { useCallback, useState } from "react";
+import { ShopDataType, Shops } from "../db/Shops";
 
 const useGetShopsData = () => {
 	const [shopsData, setShopsData] = useState<Array<ShopDataType> | null>(null);

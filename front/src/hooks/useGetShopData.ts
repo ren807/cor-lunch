@@ -1,5 +1,5 @@
-import { useCallback, useState } from 'react';
-import { ShopDataType, Shops } from '../db/Shops';
+import { useCallback, useState } from "react";
+import { ShopDataType, Shops } from "../db/Shops";
 
 const useGetShopData = () => {
 	const [shopData, setShopData] = useState<ShopDataType>();
@@ -18,7 +18,7 @@ const useGetShopData = () => {
 		if (err instanceof Error) {
 			setError(err);
 		  } else {
-			setError(new Error('An unknown error occurred.'));
+			setError(new Error("An unknown error occurred."));
 		  }
     }
 	}, []);

@@ -17,7 +17,7 @@ const Genre = () => {
 				{genresData?.map((genre, index) => (
 					<GridItem colSpan={{ base: 1, md: 4, lg: 3 }} borderRadius="5px" overflow="hidden">
 						<Link key={index} to={genre.path} state={{ genre: genre.name }} onClick={() => setCurrentGenre(genre.path)} >
-							<Box position="relative" height="120px" display="flex" justifyContent="center" alignItems="center" >
+							<Box position="relative" h="120px" display="flex" justifyContent="center" alignItems="center" >
 								<Box position="absolute" top="0" left="0" right="0" bottom="0"
 									style={{
 										backgroundImage: `url(${genre.photo})`,

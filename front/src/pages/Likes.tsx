@@ -36,8 +36,8 @@ const Like = () => {
 			) : (
 				<>
 					<Flex
-						width="100vw"
-						height="80vh"
+						w="100vw"
+						h="80vh"
 						justifyContent="center"
 						alignItems="center"
 					>
