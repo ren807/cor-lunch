@@ -1,7 +1,6 @@
 import {
 	Box,
 	Button,
-	Flex,
 	Heading,
 	Stack,
 	Text,
@@ -35,23 +34,16 @@ const Like = () => {
 				</Box>
 			) : (
 				<>
-					<Flex
-						w="100vw"
-						h="80vh"
-						justifyContent="center"
-						alignItems="center"
-					>
-						<Stack>
-							<Text fontSize={{base: "md", md: "xl"}} fontWeight="bold">
+					<Box textAlign="center">
+						<Stack h="80vh" justifyContent="center" spacing={7}>
+							<Text fontSize={{base: "md", md: "xl"}} fontWeight="bold" style={{ fontFamily: "'Noto Sans JP', sans-serif" }}>
 								いいねを押してお気に入りリストを作ろう！🔥
 							</Text>
-							<Box display="flex" justifyContent="center" alignItems="center">
-								<Link to="/">
-									<Button color="black" _hover={{ bg: "rgba(248, 157, 5, 0.8)" }}>お店を探しに行く</Button>
-								</Link>
-							</Box>
+							<Link to="/">
+								<Button color="black" _hover={{ bg: "rgba(248, 157, 5, 0.8)" }}>お店を探しに行く</Button>
+							</Link>
 						</Stack>
-					</Flex>
+					</Box>
 				</>
 			)}
 		</>
