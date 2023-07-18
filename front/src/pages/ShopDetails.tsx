@@ -1,4 +1,4 @@
-import { Box, Center, Divider, Flex, Grid, Heading, Icon, Image, Stack, Text, } from '@chakra-ui/react';
+import { Box, Center, Divider, Grid, Heading, Icon, Image, Stack, Text, } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { useNavigate, useParams } from 'react-router-dom';
