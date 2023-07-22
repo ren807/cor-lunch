@@ -43,9 +43,9 @@ const ShopDetails = () => {
 				mb={8}
 				mx="auto"
 				gap={4}
-				w={{ md: "65%"}}
+				w={{ md: "45%"}}
 			>
-				<Box h={{base: "200px", md: "360px"}} w={{base: "100%", md: "600px"}} px={5}>
+				<Box h={{base: "200px", md: "350px"}} w={{base: "100%", md: "380px"}} >
 					<Image
 						w="100%"
 						h="100%"
