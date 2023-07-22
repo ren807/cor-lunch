@@ -15,7 +15,7 @@ const Shop = (props: ShopDataType) => {
 		<>
 			<Grid templateColumns="1fr" shadow="md" borderRadius="10px" overflow="hidden">
 				<Link to={path} state={{ id: id }}>
-					<Box h={{base: "200px", md: "360px"}} w="100%" >
+					<Box h={{base: "200px", md: "350px"}} w="100%" >
 						<Image
 							w="100%"
 							h="100%"
