@@ -6,9 +6,9 @@ import { ShopDataType, Shops } from "../../db/Shops";
 jest.mock("../../db/Shops");
 
 describe("useGetShopsData", () => {
-    it("should get random shops data", () => {
-        // モックデータを設定
-        const mockShopsData: ShopDataType[] = [
+	it("should get random shops data", () => {
+		// モックデータを設定
+		const mockShopsData: ShopDataType[] = [
 			{
 				id: 1,
 				path: 'shop-1',
@@ -69,24 +69,24 @@ describe("useGetShopsData", () => {
 				time_from_company: '10 mins',
 				one_word: 'Normal!'
 			},
-        ];
+		];
 
-        // Shops関数の戻り値をモック化
-        (Shops as jest.Mock).mockReturnValue(mockShopsData);
+		// Shops関数の戻り値をモック化
+		(Shops as jest.Mock).mockReturnValue(mockShopsData);
 
-        const { result } = renderHook(() => useGetShopsData());
+		const { result } = renderHook(() => useGetShopsData());
 
-        expect(result.current.shopsData).toBeNull(); // 初期値のチェック
+		expect(result.current.shopsData).toBeNull(); // 初期値のチェック
 
-        // getShopsDataを実行
-        act(() => {
-            result.current.getShopsData();
-        });
+		// getShopsDataを実行
+		act(() => {
+			result.current.getShopsData();
+		});
 
-        // shopsDataが設定されることを確認
-        expect(result.current.shopsData).not.toBeNull();
+		// shopsDataが設定されることを確認
+		expect(result.current.shopsData).not.toBeNull();
 		if(result.current.shopsData){ 
-          expect(result.current.shopsData.length).toBe(4); // ランダムに4件取得されることをチェック
+			expect(result.current.shopsData.length).toBe(4); // ランダムに4件取得されることをチェック
 		}
-    });
+	});
 });
