@@ -6,7 +6,7 @@ import { ShopDataType, Shops } from "../../db/Shops";
 jest.mock("../../db/Shops");
 
 describe("useGetShopsData", () => {
-	it("should get random shops data", () => {
+	it("４件データが取れているか確認する", () => {
 		// モックデータを設定
 		const mockShopsData: ShopDataType[] = [
 			{
