@@ -4,6 +4,7 @@ import Header from "../../layouts/Header";
 
 describe("ヘッダーのコンポーネントテスト", () => {
 
+	// TOPページの場合
 	beforeEach(() => {
 		render(
 			<MemoryRouter initialEntries={["/"]}>
