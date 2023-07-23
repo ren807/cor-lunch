@@ -17,7 +17,7 @@ describe("ヘッダーのコンポーネントテスト", () => {
 		expect(heading).toBeInTheDocument();
 	});
 
-	it("お気に入りボタンがある、かつTOPに戻るボタンがないをテスト", () => {
+	it("お気に入りボタンがある、かつTOPに戻るボタンがないことをテスト", () => {
 		const favoriteButton = screen.getByText(/お気に入り/i);
 		const backButton = screen.queryByText(/TOPに戻る/i);
 
@@ -25,21 +25,28 @@ describe("ヘッダーのコンポーネントテスト", () => {
 		expect(backButton).not.toBeInTheDocument();
 	});
 
-	it("ハンバーガメニューのテスト", async () => {
-		// ドロアーが開いて「お気に入り」という文言があるかテスト
-		const hamburgerOpneButton = screen.getByLabelText(/Open menu/i);
-		fireEvent.click(hamburgerOpneButton);
-		const drawerHeader = screen.getByText(/Menu/i);
-		expect(drawerHeader).toBeInTheDocument();
+	describe("ハンバーガメニューのテスト", () => {
+		it("ドロアーが開いて「お気に入り」という文言があるかテスト", () => {
+			const hamburgerOpneButton = screen.getByLabelText(/Open menu/i);
+			fireEvent.click(hamburgerOpneButton);
+			const drawerHeader = screen.getByText(/Menu/i);
+			expect(drawerHeader).toBeInTheDocument();
+		});
 
-		// ×を押下時にドロアーが閉じるかテスト
-		const hamburgerCloseButton = screen.getByLabelText(/Close/i);
-		fireEvent.click(hamburgerCloseButton);
+		it("×を押下時にドロアーが閉じるかテスト", async () => {
+			// ドロアーを開く
+			const hamburgerOpneButton = screen.getByLabelText(/Open menu/i);
+			fireEvent.click(hamburgerOpneButton);
 
-		// Menuが消えるまで待つ
-		await waitFor(() => {
-			const drawerHeader2 = screen.queryByText(/Menu/i);
-			expect(drawerHeader2).not.toBeInTheDocument();
+			// ドロアーを閉じる
+			const hamburgerCloseButton = screen.getByLabelText(/Close/i);
+			fireEvent.click(hamburgerCloseButton);
+
+			// Menuが消えるまで待つ
+			await waitFor(() => {
+				const drawerHeader2 = screen.queryByText(/Menu/i);
+				expect(drawerHeader2).not.toBeInTheDocument();
+			});
 		});
 	});
 });
